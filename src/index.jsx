@@ -16,9 +16,6 @@ const weightsList = List.of(
   Map({name: 'bench', id: 2})
 )
 
-store.dispatch(setWeights(weightsList))
+store.subscribe(() => render(<WeightList />, store.getState()))
 
-render(
-  <WeightList />,
-  store.getState()
-)
+store.dispatch(setWeights(weightsList))
