@@ -2,8 +2,8 @@ import {element} from 'deku'
 
 import Weight from './weight'
 
-const WeightList = ({weights}) => <div>
-  {weights.map(weight =>
+const WeightList = ({props}) => <div>
+  {props.weights.map(weight =>
     <Weight
       key={weight.id}
       name={weight.name}
@@ -13,7 +13,7 @@ const WeightList = ({weights}) => <div>
 
 const mapStateToProps = ({weights}) => ({weights})
 
-const connect = mapFn => component => ({context}) => component(mapFn(context))
+const connect = mapFn => component => ({context}) => component({props: mapFn(context)})
 
 export default connect(
   mapStateToProps
