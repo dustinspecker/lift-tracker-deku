@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint ./ --ext .js --ext .jsx --ignore-pattern node_modules --ignore-pattern dist",
-    "test": "ava"
+    "test": "npm run lint && ava"
   },
   "repository": "dustinspecker/lift-tracker-deku",
   "keywords": [],

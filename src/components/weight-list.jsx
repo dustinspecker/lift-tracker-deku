@@ -4,6 +4,9 @@ import Weight from './weight'
 
 export default ({context}) => <div>
   {context.weights.map(weight =>
-    <Weight name={weight.name} />
+    <Weight
+      key={weight.id}
+      name={weight.name}
+    />
   )}
 </div>
