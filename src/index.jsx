@@ -1,11 +1,15 @@
 import {dom, element} from 'deku'
 
-import Weight from './components/weight'
+import WeightList from './components/weight-list'
 
 const {createRenderer} = dom
-
 const render = createRenderer(document.getElementById('app'))
 
+const weights = [
+  {name: 'squats'},
+  {name: 'bench'}
+]
+
 render(
-  <Weight name='squats' />
+  <WeightList weights={weights} />
 )
