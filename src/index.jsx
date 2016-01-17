@@ -1,15 +1,11 @@
 import {dom, element} from 'deku'
 
-const {createRenderer} = dom
+import Weight from './components/weight'
 
-const Label = {
-  render() {
-    return <span>{'Hi'}</span>
-  }
-}
+const {createRenderer} = dom
 
 const render = createRenderer(document.getElementById('app'))
 
 render(
-  <Label />
+  <Weight name='squats' />
 )

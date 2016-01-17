@@ -4,6 +4,9 @@
   "plugins": [
     "react"
   ],
+  "rules": {
+    "react/prop-types": 0
+  },
   "settings": {
     "react": {
       "pragma": "element"
