@@ -1,6 +1,7 @@
 import {createStore, combineReducers} from 'redux'
 import {dom, element} from 'deku'
 
+import {setWeights} from './actions/weights'
 import weights from './reducers/weights'
 import WeightList from './components/weight-list'
 
@@ -14,8 +15,7 @@ const weightsList = [
   {name: 'bench', id: 2}
 ]
 
-const action = {type: 'SET_WEIGHTS', weights: weightsList}
-store.dispatch(action)
+store.dispatch(setWeights(weightsList))
 
 render(
   <WeightList />,
