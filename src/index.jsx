@@ -10,8 +10,8 @@ const {createRenderer} = dom
 const render = createRenderer(document.getElementById('app'), store.dispatch)
 
 const weightsList = [
-  {name: 'squats'},
-  {name: 'bench'}
+  {name: 'squats', id: 1},
+  {name: 'bench', id: 2}
 ]
 
 const action = {type: 'SET_WEIGHTS', weights: weightsList}
