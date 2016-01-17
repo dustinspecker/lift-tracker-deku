@@ -26,7 +26,8 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "deku": "^2.0.0-rc13"
+    "deku": "^2.0.0-rc13",
+    "immutable": "^3.7.6"
   },
   "ava": {
     "files": [
