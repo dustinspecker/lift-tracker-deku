@@ -15,3 +15,17 @@ test('should render name', t => {
   assert.hasChildren(weight, 1)
   t.is(weight.children[0].nodeValue, 'squats')
 })
+
+test('should call remove handler', t => {
+  let removeCalled = false
+  const component = {
+    props: {
+      name: 'squats',
+      remove: () => removeCalled = true
+    }
+  }
+  const weight = Weight(component)
+
+  weight.attributes.onClick()
+  t.ok(removeCalled)
+})
