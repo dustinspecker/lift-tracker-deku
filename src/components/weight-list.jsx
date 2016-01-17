@@ -2,8 +2,8 @@ import {element} from 'deku'
 
 import Weight from './weight'
 
-export default ({props}) => <div>
-  {props.weights.map(weight =>
+export default ({context}) => <div>
+  {context.weights.map(weight =>
     <Weight name={weight.name} />
   )}
 </div>

@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "deku": "^2.0.0-rc13",
-    "immutable": "^3.7.6"
+    "immutable": "^3.7.6",
+    "redux": "^3.0.5"
   },
   "ava": {
     "files": [

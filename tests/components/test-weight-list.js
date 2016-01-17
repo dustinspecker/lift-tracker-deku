@@ -5,7 +5,7 @@ import WeightList from '../../src/components/weight-list'
 
 test('should render a list of weights', t => {
   const component = {
-    props: {
+    context: {
       weights: [
         {name: 'squats'},
         {name: 'bench press'}
