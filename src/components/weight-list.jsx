@@ -3,7 +3,7 @@ import {element} from 'deku'
 import Weight from './weight'
 
 const WeightList = ({props}) => <div>
-  {props.weights.map(weight =>
+  {props.weights.toJS().map(weight =>
     <Weight
       key={weight.id}
       name={weight.name}
