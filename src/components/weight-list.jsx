@@ -1,24 +1,32 @@
 import {element} from 'deku'
+import objectAssign from 'object-assign'
 
 import {removeWeight} from '../actions/weights'
 import Weight from './weight'
 
-const remove = (dispatch, index) => () => dispatch(removeWeight(index))
-
-const WeightList = ({dispatch, props}) => <div>
-  {props.weights.toJS().map((weight, index) =>
+const removeHandler = (remove, index) => () => remove(index)
+const WeightList = ({remove, weights}) => <div>
+  {weights.toJS().map((weight, index) =>
     <Weight
       key={weight.id}
       name={weight.name}
-      remove={remove(dispatch, index)}
+      remove={removeHandler(remove, index)}
     />
   )}
 </div>
 
 const mapStateToProps = ({weights}) => ({weights})
 
-const connect = mapFn => component => ({context, dispatch}) => component({dispatch, props: mapFn(context)})
+const connect = (mapFn, actions) => component => ({context, dispatch}) => {
+  const mappedActions = Object.keys(actions).reduce((acc, action) => {
+    acc[action] = (...args) => dispatch(actions[action](...args))
+    return acc
+  }, {})
+  const props = objectAssign(mapFn(context), mappedActions)
+  return component(props)
+}
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  {remove: removeWeight}
 )(WeightList)

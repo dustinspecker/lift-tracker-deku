@@ -12,7 +12,8 @@ test('should render a list of weights', () => {
         {name: 'squats'},
         {name: 'bench press'}
       ])
-    }
+    },
+    dispatch() {}
   }
   const weightList = WeightList(component)
 
