@@ -11,7 +11,7 @@ test('should render name', t => {
   }
   const weight = Weight(component)
 
-  assert.isNode(weight, 'span')
+  assert.isNode(weight, 'div')
   assert.hasChildren(weight, 1)
   t.is(weight.children[0].nodeValue, 'squats')
 })
