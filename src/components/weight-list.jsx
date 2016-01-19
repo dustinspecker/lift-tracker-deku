@@ -1,5 +1,5 @@
+import connect from 'deku-redux-connect'
 import {element} from 'deku'
-import objectAssign from 'object-assign'
 
 import {removeWeight} from '../actions/weights'
 import Weight from './weight'
@@ -16,15 +16,6 @@ const WeightList = ({props}) => <div>
 </div>
 
 const mapStateToProps = ({weights}) => ({weights})
-
-const connect = (mapFn, actions) => component => ({children = {}, context = {}, dispatch = () => ({}), props = {}}) => {
-  const mappedActions = Object.keys(actions).reduce((acc, action) => {
-    acc[action] = (...args) => dispatch(actions[action](...args))
-    return acc
-  }, {})
-  const newProps = objectAssign(props, mapFn(context), mappedActions)
-  return component({children, props: newProps})
-}
 
 export default connect(
   mapStateToProps,

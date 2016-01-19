@@ -27,8 +27,8 @@
   },
   "dependencies": {
     "deku": "^2.0.0-rc13",
+    "deku-redux-connect": "^0.1.0",
     "immutable": "^3.7.6",
-    "object-assign": "^4.0.1",
     "redux": "^3.0.5"
   },
   "ava": {
