@@ -26,7 +26,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "deku": "^2.0.0-rc13",
+    "deku": "2.0.0-rc15",
     "deku-prop-types": "^0.1.1",
     "deku-redux-connect": "^0.1.0",
     "immutable": "^3.7.6",

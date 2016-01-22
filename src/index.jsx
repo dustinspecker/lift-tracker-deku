@@ -1,5 +1,5 @@
+import {createApp, element} from 'deku'
 import {createStore, combineReducers} from 'redux'
-import {dom, element} from 'deku'
 import {List, Map} from 'immutable'
 
 import {setWeights} from './actions/weights'
@@ -8,8 +8,7 @@ import WeightList from './components/weight-list'
 
 const store = createStore(combineReducers({weights}))
 
-const {createRenderer} = dom
-const render = createRenderer(document.getElementById('app'), store.dispatch)
+const render = createApp(document.getElementById('app'), store.dispatch)
 
 const weightsList = List.of(
   Map({name: 'squats', id: 1}),
