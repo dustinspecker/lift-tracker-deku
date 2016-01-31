@@ -1,5 +1,7 @@
 import connect from 'deku-redux-connect'
 import {element} from 'deku'
+import IPropTypes from 'deku-prop-types-immutable'
+import {PropTypes, validate} from 'deku-prop-types'
 
 import {removeWeight} from '../actions/weights'
 import Weight from './weight'
@@ -15,9 +17,17 @@ const WeightList = ({props}) => <div>
   )}
 </div>
 
+WeightList.propTypes = {
+  remove: PropTypes.func,
+  weights: IPropTypes.listOf(IPropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string
+  }))
+}
+
 const mapStateToProps = ({weights}) => ({weights})
 
 export default connect(
   mapStateToProps,
   {remove: removeWeight}
-)(WeightList)
+)(validate(WeightList))
