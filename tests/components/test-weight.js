@@ -12,7 +12,7 @@ test('should render name', t => {
   const weight = Weight(component)
 
   assert.isNode(weight, 'div')
-  assert.hasChildren(weight, 1)
+  assert.hasChildren(weight, 2)
   t.is(weight.children[0].nodeValue, 'squats')
 })
 
@@ -25,7 +25,8 @@ test('should call remove handler', t => {
     }
   }
   const weight = Weight(component)
+  const deleteButton = weight.children[1]
 
-  weight.attributes.onClick()
+  deleteButton.attributes.onClick()
   t.ok(removeCalled)
 })

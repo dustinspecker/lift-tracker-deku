@@ -37,7 +37,7 @@ test('should dispatch REMOVE_WEIGHT', t => {
   const weightList = WeightList(component)
   const benchPress = Weight(weightList.children[1])
 
-  benchPress.attributes.onClick()
+  benchPress.children[1].attributes.onClick()
 
   t.ok(removeCalled)
 })
