@@ -10,6 +10,7 @@ const removeHandler = (remove, index) => () => remove(index)
 const WeightList = ({props}) => <div>
   {props.weights.toJS().map((weight, index) =>
     <Weight
+      amount={weight.amount}
       key={weight.id}
       name={weight.name}
       remove={removeHandler(props.remove, index)}
@@ -20,6 +21,7 @@ const WeightList = ({props}) => <div>
 WeightList.propTypes = {
   remove: PropTypes.func,
   weights: IPropTypes.listOf(IPropTypes.shape({
+    amount: PropTypes.number,
     id: PropTypes.number,
     name: PropTypes.string
   }))

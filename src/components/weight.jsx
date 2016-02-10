@@ -7,6 +7,7 @@ const Weight = ({props}) => <div>
 </div>
 
 Weight.propTypes = {
+  amount: PropTypes.number,
   name: PropTypes.string.isRequired,
   remove: PropTypes.func
 }
