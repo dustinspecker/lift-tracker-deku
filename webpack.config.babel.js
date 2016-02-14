@@ -19,6 +19,12 @@ export default {
         loaders: [
           'babel'
         ]
+      },
+      {
+        test: /\.json$/,
+        loaders: [
+          'json'
+        ]
       }
     ]
   },

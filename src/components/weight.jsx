@@ -1,10 +1,11 @@
-import {element} from 'deku'
+import {button, div} from 'dscript-deku'
 import {PropTypes, validate} from 'deku-prop-types'
 
-const Weight = ({props}) => <div>
-  {props.name}
-  <button onClick={props.remove}>{'Delete'}</button>
-</div>
+const Weight = ({props}) =>
+  div([
+    props.name,
+    button({onClick: props.remove}, ['Delete'])
+  ])
 
 Weight.propTypes = {
   amount: PropTypes.number,
