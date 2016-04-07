@@ -28,5 +28,5 @@ test('should call remove handler', t => {
   const deleteButton = weight.children[1]
 
   deleteButton.attributes.onClick()
-  t.ok(removeCalled)
+  t.truthy(removeCalled)
 })

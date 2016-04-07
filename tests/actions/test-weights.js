@@ -14,5 +14,5 @@ test('should return SET_WEIGHTS action', t => {
   const {type, weights} = actions.setWeights(List.of(1, 2, 3))
 
   t.is(type, 'SET_WEIGHTS')
-  t.ok(is(weights, List.of(1, 2, 3)))
+  t.truthy(is(weights, List.of(1, 2, 3)))
 })

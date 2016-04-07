@@ -39,5 +39,5 @@ test('should dispatch REMOVE_WEIGHT', t => {
 
   benchPress.children[1].attributes.onClick()
 
-  t.ok(removeCalled)
+  t.truthy(removeCalled)
 })

@@ -4,7 +4,7 @@ import test from 'ava'
 import weights from '../../src/reducers/weights'
 
 test('should have default value of empty List', t => {
-  t.ok(is(weights(), List()))
+  t.truthy(is(weights(), List()))
 })
 
 test('SET_WEIGHTS should set weights list', t => {
@@ -12,7 +12,7 @@ test('SET_WEIGHTS should set weights list', t => {
   const action = {type: 'SET_WEIGHTS', weights: weightsList}
   const nextState = weights(undefined, action)
 
-  t.ok(is(nextState, weightsList))
+  t.truthy(is(nextState, weightsList))
 })
 
 test('REMOVE_WEIGHT should remove weight from list', t => {
@@ -20,5 +20,5 @@ test('REMOVE_WEIGHT should remove weight from list', t => {
   const action = {type: 'REMOVE_WEIGHT', index: 1}
   const nextState = weights(weightsList, action)
 
-  t.ok(is(nextState, List.of(1, 3)))
+  t.truthy(is(nextState, List.of(1, 3)))
 })
